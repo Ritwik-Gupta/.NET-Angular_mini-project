@@ -23,7 +23,7 @@ import { BoookService } from './services/boook.service';
     DeleteBookComponent,
     NewBookComponent,
     ShowBookComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -32,6 +32,7 @@ import { BoookService } from './services/boook.service';
     RouterModule.forRoot([
       { path: '', component: HomeComponent, pathMatch: 'full' },
       { path: 'books', component: BooksComponent, pathMatch: 'full' },
+      { path: 'show-book', component: ShowBookComponent, pathMatch: 'full' },
       { path: 'add-book', component: NewBookComponent, pathMatch: 'full' },
       { path: 'update-book', component: UpdateBookComponent, pathMatch: 'full' },
       { path: 'delete-book', component: DeleteBookComponent, pathMatch: 'full' },

@@ -14,4 +14,10 @@ export class BoookService {
   public getAllBooks() {
     return this.http.get<Book[]>(this._baseURL);
   }
+
+  public getBookById(id: number) {  
+    const _url = this._baseURL + `/GetBookById?id=${id}`;
+    debugger;
+    return this.http.get<Book>(_url);
+  }
 }
