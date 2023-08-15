@@ -9,6 +9,7 @@ namespace Summary_Application.Data.Services
         public void UpdateBook(int id, Book book);
         public void DeleteBook(int id);
         public void AddBook(Book book);
+        public int GetNextAvailableId();
 
     }
 }

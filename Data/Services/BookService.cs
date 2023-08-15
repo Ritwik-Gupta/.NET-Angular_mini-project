@@ -41,5 +41,10 @@ namespace Summary_Application.Data.Services
                 book.DateRead = new_book.DateRead;
             }
         }
+
+        public int GetNextAvailableId()
+        {
+            return Data.Books.OrderByDescending(x => x.Id).First().Id + 1;
+        }
     }
 }

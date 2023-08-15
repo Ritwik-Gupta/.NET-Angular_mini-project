@@ -46,5 +46,11 @@ namespace Summary_Application.Controllers
             return Ok("Book Deleted");
         }
 
+        [HttpGet("GetNextAvailableId")]
+        public IActionResult GetNextAvailableId()
+        {
+            return Ok(_bookService.GetNextAvailableId());
+        }
+
     }
 }
