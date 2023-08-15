@@ -15,8 +15,8 @@
 
 <h6>Search book by Id</h6>
 <div class="input-group mb-3" style="width:25%">
-  <input type="text" class="form-control" placeholder="Enter book id">
+  <input type="text" class="form-control" placeholder="Enter book id" [(ngModel)]="bookId">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" type="button">Search</button>
+    <button class="btn btn-outline-secondary" type="button" [routerLink]="['/show-book']" [queryParams]="{'id': bookId}">Search</button>
   </div>
 </div>

@@ -1,1 +1,36 @@
-<p>new-book works!</p>
+<div class="d-flex justify-content-center" >
+  <div class="card col-md-4 col-sm-8" style=" background-color:bisque;">
+    <h4 class="card-header">Add new book</h4>
+    <div class="card-body">
+      <form>
+        <div class="form-group">
+          <label><strong>Title</strong></label>
+          <input type="text" class="form-control" [(ngModel)]="title" name="title">
+        </div>
+        <div class="form-group mt-2">
+          <label for="author"><strong>Author</strong></label>
+          <input type="text" class="form-control" id="author" [(ngModel)]="author" name="author">
+        </div>
+        <div class="form-group mt-2">
+          <label for="description"><strong>Description</strong></label>
+          <textarea type="text" class="form-control" id="description" [(ngModel)]="description" name="description"></textarea>
+        </div>
+        <div class="form-group d-flex justify-content-between mt-2">
+          <div>
+            <label for="dateStart"><strong>Date Started</strong></label>
+            <input type="date" class="form-control" id="dateStart" [(ngModel)]="dateStart" name="dateStart">
+          </div>
+          <div>
+            <label for="dateRead"><strong>Date Read</strong></label>
+            <input type="date" class="form-control" id="dateRead" [(ngModel)]="dateRead" name="dateRead">
+          </div>
+        </div>
+        <div class="form-group mt-2">
+          <label for="rating"><strong>Rating</strong></label>
+          <input type="text" class="form-control" id="rating" style="width: 30%;" [(ngModel)]="rating" name="rating">
+        </div>
+        <button type="submit" class="btn btn-primary mt-3 float-end" (click)="saveBook()" [routerLink]="['/books']">Add</button>
+      </form>
+    </div>
+  </div>
+</div>
