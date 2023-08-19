@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { UntypedFormBuilder } from '@angular/forms';
 import { Book } from 'src/app/interfaces/Book';
 import { BoookService } from 'src/app/services/boook.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-book',
@@ -28,7 +28,7 @@ export class NewBookComponent implements OnInit {
     rate: undefined,
   }
 
-  constructor(private service: BoookService) { }
+  constructor(private service: BoookService, private router: Router) { }
 
   ngOnInit(): void {
     this.service.getNextAvailableBookId().subscribe(data => {
@@ -46,6 +46,7 @@ export class NewBookComponent implements OnInit {
     this.newBook.rate = this.rating;
 
     this.service.addNewBook(this.newBook);
+    this.router.navigate(['/books']);
   }
 
   test() {
