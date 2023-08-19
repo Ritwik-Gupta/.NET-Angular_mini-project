@@ -32,7 +32,7 @@
         <div class="d-flex flex-row justify-content-center">
           <a [routerLink]="['/show-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="View book"><i class="bi text-success bi-eye mx-2"></i></a>
           <a [routerLink]="['/update-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Edit book"><i class="bi text-primary bi-pencil-square mx-2"></i></a>
-          <a [routerLink]="['/delete-book']" data-toggle="tooltip" title="Delete book"><i class="bi text-danger bi-trash d-inline mx-2"></i></a>
+          <a [routerLink]="['/delete-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Delete book"><i class="bi text-danger bi-trash d-inline mx-2"></i></a>
         </div>
       </td>
     </tr>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BoookService } from 'src/app/services/boook.service';
 import { Book } from 'src/app/interfaces/Book';
 
@@ -13,8 +13,7 @@ export class UpdateBookComponent implements OnInit {
   public book: Book;
   private bookId: number;
 
-  constructor(private service: BoookService, private activatedRoute: ActivatedRoute) {
-    debugger;
+  constructor(private service: BoookService, private activatedRoute: ActivatedRoute, private router: Router) {
     this.activatedRoute.queryParams.subscribe(data => {
       this.bookId = data.id;
     });
@@ -22,13 +21,13 @@ export class UpdateBookComponent implements OnInit {
 
   ngOnInit(): void {
     this.service.getBookById(this.bookId).subscribe(data => {
-      debugger;
       this.book = data;
     })
   }
 
   saveBook(): void {
-    debugger;
+    this.service.updateBook(this.book, this.bookId);
+    this.router.navigate(['/books']);
   }
 
 }

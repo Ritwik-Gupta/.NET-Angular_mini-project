@@ -1,1 +1,11 @@
-<p>delete-book works!</p>
+<div class="d-flex justify-content-center" *ngIf="book">
+  <div class="card col-md-4 col-sm-8" style=" background-color:bisque;">
+    <h5 class="card-header">Delete Book</h5>
+    <div class="card-body">
+      <br />
+      <p>Are you sure you want to delete the book <strong><em>"{{book.title}}"?</em></strong></p>
+      <br />
+      <button type="submit" class="btn btn-primary float-end" (click)="deleteBook()">Delete</button>
+    </div>
+  </div>
+</div>

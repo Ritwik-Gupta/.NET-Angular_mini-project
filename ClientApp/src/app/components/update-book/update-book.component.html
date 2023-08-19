@@ -20,11 +20,11 @@
         <div class="form-group d-flex justify-content-between mt-2">
           <div>
             <label for="dateStart"><strong>Date Started</strong></label>
-            <input type="date" class="form-control" id="dateStart" [(ngModel)]="book.dateStart" name="dateStart" placeholder="{{book.dateStart}}">
+            <input type="date" class="form-control" id="dateStart" [(ngModel)]="book.dateStart" name="dateStart" value="{{book.dateStart}}">
           </div>
           <div>
             <label for="dateRead"><strong>Date Read</strong></label>
-            <input type="date" class="form-control" id="dateRead" [(ngModel)]="book.dateRead" name="dateRead" placeholder="{{book.dateRead}}">
+            <input type="date" class="form-control" id="dateRead" [(ngModel)]="book.dateRead" name="dateRead" value="{{book.dateRead}}">
           </div>
         </div>
         <div class="form-group mt-2">
@@ -36,3 +36,4 @@
     </div>
   </div>
 </div>
+

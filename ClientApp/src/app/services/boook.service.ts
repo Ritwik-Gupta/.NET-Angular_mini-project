@@ -30,4 +30,14 @@ export class BoookService {
     const _url = this._baseURL + `/AddBook`;
     this.http.post<any>(_url, book).subscribe();
   }
+
+  public updateBook(book: Book, id: number) {
+    const _url = this._baseURL + `/UpdateBook`;
+    this.http.post<any>(_url + `?id=${id}`, book).subscribe();
+  }
+
+  public deleteBook(id: number) {
+    const _url = this._baseURL + `/DeleteBook`;
+    this.http.get<any>(_url + `?id=${id}`).subscribe();
+  }
 }
