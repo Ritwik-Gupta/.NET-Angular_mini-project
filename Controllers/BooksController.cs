@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Summary_Application.Data.Model;
-using Summary_Application.Data.Services;
+using Summary_Application.Model;
+using Summary_Application.Services;
 
 namespace Summary_Application.Controllers
 {
@@ -39,7 +39,7 @@ namespace Summary_Application.Controllers
             return Ok("Book Added");
         }
 
-        [HttpPost("DeleteBook")]
+        [HttpGet("DeleteBook")]
         public IActionResult DeleteBook(int id)
         {
             _bookService.DeleteBook(id);
@@ -52,5 +52,11 @@ namespace Summary_Application.Controllers
             return Ok(_bookService.GetNextAvailableId());
         }
 
+        [HttpPost("AddMultipleBooks")]
+        public IActionResult AddMultipleBooks([FromBody] List<Book> books)
+        {
+            _bookService.AddMultipleBooks(books);
+            return Ok("Books Added!");
+        }
     }
 }

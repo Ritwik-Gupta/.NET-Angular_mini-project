@@ -25,7 +25,7 @@ export class UpdateBookComponent implements OnInit {
     })
   }
 
-  saveBook(): void {
+  saveBook(): any {
     this.service.updateBook(this.book, this.bookId);
     this.router.navigate(['/books']);
   }

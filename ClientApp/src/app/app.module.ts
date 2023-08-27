@@ -13,6 +13,7 @@ import { NewBookComponent } from './components/new-book/new-book.component';
 import { ShowBookComponent } from './components/show-book/show-book.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import { BoookService } from './services/boook.service';
+import { TestCompComponent } from './components/test-comp/test-comp.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BoookService } from './services/boook.service';
     NewBookComponent,
     ShowBookComponent,
     UpdateBookComponent,
+    TestCompComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -36,6 +38,7 @@ import { BoookService } from './services/boook.service';
       { path: 'add-book', component: NewBookComponent, pathMatch: 'full' },
       { path: 'update-book', component: UpdateBookComponent, pathMatch: 'full' },
       { path: 'delete-book', component: DeleteBookComponent, pathMatch: 'full' },
+      { path: 'test-book', component: TestCompComponent, pathMatch: 'full' },
     ])
   ],
   providers: [BoookService],

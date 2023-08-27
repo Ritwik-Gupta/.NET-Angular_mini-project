@@ -1,6 +1,7 @@
-using Summary_Application.Data.Model;
+using Summary_Application.Model;
 
-namespace Summary_Application.Data {
+namespace Summary_Application.Data
+{
     public class Data
     {
         public static List<Book> Books => allBooks;

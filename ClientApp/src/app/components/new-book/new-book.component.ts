@@ -31,13 +31,13 @@ export class NewBookComponent implements OnInit {
   constructor(private service: BoookService, private router: Router) { }
 
   ngOnInit(): void {
-    this.service.getNextAvailableBookId().subscribe(data => {
-      this.id = data;
-    });
+    // this.service.getNextAvailableBookId().subscribe(data => {
+    //   this.id = data;
+    // });
   }
 
   saveBook() {
-    this.newBook.id = this.id;
+    // this.newBook.id = this.id;
     this.newBook.title = this.title;
     this.newBook.author = this.author;
     this.newBook.description = this.description;

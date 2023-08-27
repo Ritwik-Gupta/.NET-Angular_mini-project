@@ -14,7 +14,7 @@ export class BooksComponent implements OnInit {
   constructor(private service: BoookService) { }
 
   ngOnInit(): void {
-    console.log("working");
+    // console.log("working");
     this.service.getAllBooks().subscribe(data => {
       this.books = data;
     })

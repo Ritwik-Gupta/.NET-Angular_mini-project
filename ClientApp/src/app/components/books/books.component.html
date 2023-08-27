@@ -6,35 +6,46 @@
 
 <br />
 
-<p *ngIf="!books">Loading...</p>
 
-<table class="table table-striped w-auto" *ngIf="books">
-  <tr>
-    <th scope="col" style="width:15%;">Title</th>
-    <th scope="col" style="width:10%;">Author</th>
-    <th scope="col">Description</th>
-    <th scope="col" style="width:5%;">Rating</th>
-    <th scope="col">DateStart</th>
-    <th scope="col">DateRead</th>
-    <th scope="col" style="width:8%;">Completed?</th>
-    <th scope="col" style="width:8%; text-align:center;">Action</th>
-  </tr>
-  <tbody>
-    <tr *ngFor="let book of books">
-      <td>{{book.title}}</td>
-      <td>{{book.author}}</td>
-      <td>{{book.description}}</td>
-      <td>{{book.rate}}</td>
-      <td>{{book.dateStart | date:'dd/MM/yyyy'}}</td>
-      <td>{{book.dateRead | date:'dd/MM/yyyy'}}</td>
-      <td>{{book.dateRead != null ? 'Yes' : 'No'}}</td>
-      <td style="text-align:center;">
-        <div class="d-flex flex-row justify-content-center">
-          <a [routerLink]="['/show-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="View book"><i class="bi text-success bi-eye mx-2"></i></a>
-          <a [routerLink]="['/update-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Edit book"><i class="bi text-primary bi-pencil-square mx-2"></i></a>
-          <a [routerLink]="['/delete-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Delete book"><i class="bi text-danger bi-trash d-inline mx-2"></i></a>
-        </div>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<div *ngIf="books.length==0" class="alert alert-primary" role="alert">
+  No Books Avaialble!
+</div>
+
+
+<div class="card" *ngIf="books.length>0">
+  <div class="card-body">
+    <table class="table table-striped w-auto">
+      <thead>
+        <tr>
+          <th scope="col" style="width:15%;">Title</th>
+          <th scope="col" style="width:10%;">Author</th>
+          <th scope="col">Description</th>
+          <th scope="col" style="width:5%;">Rating</th>
+          <th scope="col">DateStart</th>
+          <th scope="col">DateRead</th>
+          <th scope="col" style="width:8%;">Completed?</th>
+          <th scope="col" style="width:8%; text-align:center;">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of books">
+          <td>{{book.title}}</td>
+          <td>{{book.author}}</td>
+          <td>{{book.description}}</td>
+          <td>{{book.rate}}</td>
+          <td>{{book.dateStart | date:'dd/MM/yyyy'}}</td>
+          <td>{{book.dateRead | date:'dd/MM/yyyy'}}</td>
+          <td>{{book.dateRead != null ? 'Yes' : 'No'}}</td>
+          <td style="text-align:center;">
+            <div class="d-flex flex-row justify-content-center">
+              <a [routerLink]="['/show-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="View book"><i class="bi text-success bi-eye mx-2"></i></a>
+              <a [routerLink]="['/update-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Edit book"><i class="bi text-primary bi-pencil-square mx-2"></i></a>
+              <a [routerLink]="['/delete-book']" [queryParams]="{'id': book.id}" data-toggle="tooltip" title="Delete book"><i class="bi text-danger bi-trash d-inline mx-2"></i></a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>

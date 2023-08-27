@@ -1,5 +1,7 @@
 
-<h5 *ngIf="!book">Loading...</h5>
+<div *ngIf="!book" class="alert alert-primary" role="alert">
+  Book Not Found!
+</div>
 
 
 <div class="d-flex justify-content-center" *ngIf="book">
