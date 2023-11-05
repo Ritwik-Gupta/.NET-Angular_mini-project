@@ -9,13 +9,14 @@ import { Book } from '../../interfaces/Book';
 })
 export class BooksComponent implements OnInit {
 
-  public books: Book[];
+  public books: Array<Book> = [];
 
   constructor(private service: BoookService) { }
 
   ngOnInit(): void {
     // console.log("working");
     this.service.getAllBooks().subscribe(data => {
+      debugger;
       this.books = data;
     })
   }

@@ -14,35 +14,35 @@ namespace Summary_Application.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public async Task<IActionResult> Get()
         {
-            return Ok(_bookService.GetAllBooks());
+            return Ok(await _bookService.GetAllBooks());
         }
 
         [HttpGet("GetBookById")]
-        public IActionResult GetBookById(int id)
+        public async Task<IActionResult> GetBookById(int id)
         {
-            return Ok(_bookService.GetBookById(id));
+            return Ok(await _bookService.GetBookById(id));
         }
 
         [HttpPost("UpdateBook")]
-        public IActionResult UpdateBook(int id, [FromBody] Book book)
+        public async Task<IActionResult> UpdateBook(int id, [FromBody] Book book)
         {
-            _bookService.UpdateBook(id, book);
+            await _bookService.UpdateBook(id, book);
             return Ok("Book Updated");
         }
 
         [HttpPost("AddBook")]
-        public IActionResult AddBook([FromBody] Book book)
+        public async Task<IActionResult> AddBook([FromBody] Book book)
         {
-            _bookService.AddBook(book);
+            await _bookService.AddBook(book);
             return Ok("Book Added");
         }
 
         [HttpGet("DeleteBook")]
-        public IActionResult DeleteBook(int id)
+        public async Task<IActionResult> DeleteBook(int id)
         {
-            _bookService.DeleteBook(id);
+            await _bookService.DeleteBook(id);
             return Ok("Book Deleted");
         }
 
@@ -53,9 +53,9 @@ namespace Summary_Application.Controllers
         }
 
         [HttpPost("AddMultipleBooks")]
-        public IActionResult AddMultipleBooks([FromBody] List<Book> books)
+        public async Task<IActionResult> AddMultipleBooks([FromBody] List<Book> books)
         {
-            _bookService.AddMultipleBooks(books);
+            await _bookService.AddMultipleBooks(books);
             return Ok("Books Added!");
         }
     }
